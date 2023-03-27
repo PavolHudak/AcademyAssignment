@@ -1,5 +1,6 @@
 package sk.ness.academy.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import sk.ness.academy.domain.Article;
@@ -16,7 +17,7 @@ public interface ArticleService {
 	  void createArticle(Article article);
 
 	  /** Creates new {@link Article}s by ingesting all articles from json */
-	  void ingestArticles(String jsonArticles);
+	  void ingestArticles(String jsonArticles) throws IOException;
 
 	/** Delete {@link Article} by Id*/
 	void deleteByID(Integer articleId);
