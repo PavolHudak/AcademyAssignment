@@ -32,4 +32,4 @@ GET http://localhost:8080/authors - returns list of all authors
 1. There are lots of tools like Postman (Chrome) that can be used to http communication. Or try http://localhost:8080/swagger-ui.html :)
 2. DB is automatically generated from domain entities (there is no need to modify mydb.script e.g. when introducing new tables, columns, etc.)
 3. When a service is @Transactional it handles the DB transactions for you
-4. Google
+4. Google 
