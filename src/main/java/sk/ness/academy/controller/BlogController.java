@@ -54,7 +54,7 @@ public class BlogController {
 
   @RequestMapping(value = "authors/stats", method = RequestMethod.GET)
   public List<AuthorStats> authorStats() {
-	  throw new UnsupportedOperationException("Author statistics not implemented.");
+    return this.authorService.getAuthorStatistics();
   }
 
   @RequestMapping(value = "articles/{articleId}" , method = RequestMethod.DELETE)

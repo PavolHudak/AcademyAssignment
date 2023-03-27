@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import sk.ness.academy.config.DatabaseConfig;
+import sk.ness.academy.dao.AuthorHibernateDAO;
 
 @SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
 @EnableTransactionManagement
@@ -18,5 +19,6 @@ public class AssignmentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AssignmentApplication.class, args);
 	}
+
 
 }

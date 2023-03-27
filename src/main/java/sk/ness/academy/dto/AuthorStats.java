@@ -5,6 +5,15 @@ public class AuthorStats {
 	  private String authorName;
 	  private Integer articleCount;
 
+	public AuthorStats() {
+
+	}
+
+	public AuthorStats(String authorName, Long articleCount) {
+		this.authorName = authorName;
+		this.articleCount = Math.toIntExact(articleCount);
+	 }
+
 	  public String getAuthorName() {
 	    return this.authorName;
 	  }

@@ -39,7 +39,8 @@ public class ArticleServiceImpl implements ArticleService {
   @Override
   public void ingestArticles(final String jsonArticles) throws IOException {
     File file = new File(jsonArticles);
-    List<Article> articles = new ObjectMapper().readValue(file, new TypeReference<List<Article>>(){});
+    List<Article> articles = new ObjectMapper().readValue(file, new TypeReference<>() {
+    });
 
     for (Article article : articles) {
       this.articleDAO.persist(article);
