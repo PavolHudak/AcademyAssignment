@@ -57,4 +57,9 @@ public class BlogController {
 	  throw new UnsupportedOperationException("Author statistics not implemented.");
   }
 
+  @RequestMapping(value = "articles/{articleId}" , method = RequestMethod.DELETE)
+    public void deleteArticle(@PathVariable final Integer articleId) {
+        this.articleService.deleteByID(articleId);
+  }
+
 }
