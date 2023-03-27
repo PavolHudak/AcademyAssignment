@@ -40,7 +40,7 @@ public class ArticleServiceImpl implements ArticleService {
   public void ingestArticles(final String jsonArticles) throws IOException {
     File file = new File(jsonArticles);
     List<Article> articles = new ObjectMapper().readValue(file, new TypeReference<List<Article>>(){});
-    
+
     for (Article article : articles) {
       this.articleDAO.persist(article);
     }
@@ -49,6 +49,11 @@ public class ArticleServiceImpl implements ArticleService {
   @Override
   public void deleteByID(Integer articleId) {
     this.articleDAO.deleteByID(articleId);
+  }
+
+  @Override
+  public List<Article> searchArticles(String searchText) {
+    return this.articleDAO.searchArticles(searchText);
   }
 
 }

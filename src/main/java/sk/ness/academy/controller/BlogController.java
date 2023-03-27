@@ -38,7 +38,7 @@ public class BlogController {
 
   @RequestMapping(value = "articles/search/{searchText}", method = RequestMethod.GET)
   public List<Article> searchArticle(@PathVariable final String searchText) {
-	  throw new UnsupportedOperationException("Full text search not implemented.");
+    return this.articleService.searchArticles(searchText);
   }
 
   @RequestMapping(value = "articles", method = RequestMethod.PUT)
@@ -61,5 +61,6 @@ public class BlogController {
     public void deleteArticle(@PathVariable final Integer articleId) {
         this.articleService.deleteByID(articleId);
   }
+
 
 }

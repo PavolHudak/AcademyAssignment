@@ -22,4 +22,7 @@ public interface ArticleService {
 	/** Delete {@link Article} by Id*/
 	void deleteByID(Integer articleId);
 
+	/** Find all articles contains searchText **/
+	List<Article> searchArticles(String searchText);
+
 	}

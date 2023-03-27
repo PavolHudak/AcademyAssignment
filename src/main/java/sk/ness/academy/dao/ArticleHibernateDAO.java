@@ -1,6 +1,7 @@
 package sk.ness.academy.dao;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
@@ -34,6 +35,13 @@ public class ArticleHibernateDAO implements ArticleDAO {
   @Override
   public void deleteByID(Integer articleId) {
     this.sessionFactory.getCurrentSession().delete(findByID(articleId));
+  }
+
+  @Override
+  public List<Article> searchArticles(String searchText) {
+    return findAll().stream()
+            .filter(A -> A.getAuthor().contains(searchText) || A.getText().contains(searchText) || A.getTitle().contains(searchText))
+            .collect(Collectors.toList());
   }
 
 
