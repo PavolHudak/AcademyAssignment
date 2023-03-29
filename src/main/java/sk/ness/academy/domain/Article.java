@@ -1,21 +1,14 @@
 package sk.ness.academy.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "articles")
 @SequenceGenerator(name = "articles_seq_store", sequenceName = "article_seq", allocationSize = 1)
 public class Article {
-
   public Article() {
     this.createTimestamp = new Date();
   }
@@ -37,6 +30,10 @@ public class Article {
   @Column(name = "create_timestamp")
   @Temporal(TemporalType.TIMESTAMP)
   private Date createTimestamp;
+
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+  @JoinColumn(name = "article_id")
+  private List<Comment> comments = new ArrayList<>();
 
   public Integer getId() {
     return this.id;
@@ -76,6 +73,14 @@ public class Article {
 
   public void setCreateTimestamp(final Date createTimestamp) {
     this.createTimestamp = createTimestamp;
+  }
+
+  public List<Comment> getComments() {
+    return comments;
+  }
+
+  public void setComments(List<Comment> comments) {
+    this.comments = comments;
   }
 
 }

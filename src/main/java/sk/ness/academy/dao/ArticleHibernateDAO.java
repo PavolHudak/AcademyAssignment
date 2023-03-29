@@ -24,7 +24,8 @@ public class ArticleHibernateDAO implements ArticleDAO {
   @SuppressWarnings("unchecked")
   @Override
   public List<Article> findAll() {
-    return this.sessionFactory.getCurrentSession().createSQLQuery("select * from articles").addEntity(Article.class).list();
+   //return this.sessionFactory.getCurrentSession().createSQLQuery("select * from articles").addEntity(Article.class).list();
+    return this.sessionFactory.getCurrentSession().createSQLQuery("select id , title, text, author, create_timestamp from articles").list();
   }
 
   @Override
@@ -43,6 +44,5 @@ public class ArticleHibernateDAO implements ArticleDAO {
             .filter(A -> A.getAuthor().contains(searchText) || A.getText().contains(searchText) || A.getTitle().contains(searchText))
             .collect(Collectors.toList());
   }
-
 
 }

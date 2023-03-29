@@ -5,9 +5,7 @@ public class AuthorStats {
 	  private String authorName;
 	  private Integer articleCount;
 
-	public AuthorStats() {
-
-	}
+	public AuthorStats() {}
 
 	public AuthorStats(String authorName, Long articleCount) {
 		this.authorName = authorName;
