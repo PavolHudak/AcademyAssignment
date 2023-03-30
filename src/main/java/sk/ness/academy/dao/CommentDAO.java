@@ -1,9 +1,6 @@
 package sk.ness.academy.dao;
 
-import sk.ness.academy.domain.Article;
 import sk.ness.academy.domain.Comment;
-
-import java.util.List;
 
 public interface CommentDAO {
 
@@ -11,7 +8,7 @@ public interface CommentDAO {
     Comment findCommentById(Integer commentId);
 
     /** Persists {@link Comment} into the DB */
-    void persist(Comment comment);
+    void createComment(Comment comment);
 
     /** Deletes {@link Comment} of provided Id */
     void deleteCommentById(Integer commentId);

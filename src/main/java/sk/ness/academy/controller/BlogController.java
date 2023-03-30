@@ -68,7 +68,8 @@ public class BlogController {
   }
 
   @RequestMapping(value = "articles/{articleId}/comments", method = RequestMethod.PUT)
-  public void addComment(@RequestBody final Comment comment) {
+  public void createComment(@PathVariable final Integer articleId, @RequestBody final Comment comment) {
+    comment.setArticleId(articleId);
     this.commentService.createComment(comment);
   }
 

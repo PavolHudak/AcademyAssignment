@@ -17,15 +17,28 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comments_seq_store")
     private Integer id;
 
+    @Column(name = "article_id")
+    private Integer articleId;
+
     @Column(name = "author", length = 250)
     private String author;
 
     @Column(name = "text", length = 2000)
     private String text;
 
+
     @Column(name = "create_timestamp")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTimestamp;
+
+
+    public Integer getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
+    }
 
     public Integer getId() {
         return this.id;

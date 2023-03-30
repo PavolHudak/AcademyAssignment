@@ -2,6 +2,7 @@ package sk.ness.academy.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import sk.ness.academy.domain.Article;
 import sk.ness.academy.domain.Comment;
 
 import javax.annotation.Resource;
@@ -9,9 +10,6 @@ import javax.annotation.Resource;
 
 @Repository
 public class CommentHibernateDAO implements CommentDAO{
-
-    @Resource
-    private ArticleDAO articleDAO;
 
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
@@ -22,7 +20,8 @@ public class CommentHibernateDAO implements CommentDAO{
     }
 
     @Override
-    public void persist(final Comment comment) {
+    public void createComment(final Comment comment) {
+       // comment.setArticleId(sessionFactory.getCurrentSession().get(Article.class);
         this.sessionFactory.getCurrentSession().saveOrUpdate(comment);
     }
 

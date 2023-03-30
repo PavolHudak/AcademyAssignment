@@ -27,6 +27,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void createComment(final Comment comment) {
-        this.commentDAO.persist(comment);
+        this.commentDAO.createComment(comment);
     }
 }
