@@ -31,6 +31,10 @@ public class ArticleServiceImpl implements ArticleService {
 	  return this.articleDAO.findAll();
   }
 
+  public List<Article> findAllList() {
+    return this.articleDAO.findAllList();
+  }
+
   @Override
   public void createArticle(final Article article) {
 	  this.articleDAO.persist(article);

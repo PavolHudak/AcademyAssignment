@@ -33,7 +33,7 @@ public class BlogController {
   // ~~ Article
   @RequestMapping(value = "articles", method = RequestMethod.GET)
   public List<Article> getAllArticles() {
-	  return this.articleService.findAll();
+	  return this.articleService.findAllList();
   }
 
   @RequestMapping(value = "articles/{articleId}", method = RequestMethod.GET)

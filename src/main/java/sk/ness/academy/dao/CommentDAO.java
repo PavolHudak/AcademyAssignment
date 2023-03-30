@@ -10,10 +10,6 @@ public interface CommentDAO {
     /** Returns {@link Comment} with provided ID */
     Comment findCommentById(Integer commentId);
 
-    /** Creates new {@link Comment} */
-  //  void createComment(Comment comment);
-
-
     /** Persists {@link Comment} into the DB */
     void persist(Comment comment);
 

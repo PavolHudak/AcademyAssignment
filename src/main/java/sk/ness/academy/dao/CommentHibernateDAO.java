@@ -16,7 +16,6 @@ public class CommentHibernateDAO implements CommentDAO{
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 
-
     @Override
     public Comment findCommentById(Integer commentId) {
         return (Comment) this.sessionFactory.getCurrentSession().get(Comment.class, commentId);
