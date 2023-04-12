@@ -28,4 +28,5 @@ public class AuthorStats {
 	    this.articleCount = articleCount;
 	  }
 
-	}
+
+}

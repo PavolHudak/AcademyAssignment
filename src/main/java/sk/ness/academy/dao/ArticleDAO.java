@@ -24,6 +24,5 @@ public interface ArticleDAO {
 	  /** Find all articles contains searchText **/
 	  List<Article> searchArticles(String searchText);
 
-
 	}
 
